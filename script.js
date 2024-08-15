@@ -108,7 +108,7 @@ function decrementCounter(amount) {
 function start() {
     if (intervalId === null) { // Prevent multiple intervals
         intervalId = setInterval(() => {
-            const increment = rate / total; // Adjust increment to match the total rate
+            const increment = rate / 3600; // Correct increment for per second calculation based on per hour rate
             counter += increment;
             if (Math.floor(counter) >= total) {
                 counter = total;
@@ -120,6 +120,7 @@ function start() {
         }, 1000); // Updates every second
     }
 }
+
 
 // Function to pause the counter
 function pause() {
