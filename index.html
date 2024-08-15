@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Time Web App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Production Time Calculator</div>
+        <div class="section">
+            <label>Total:</label>
+            <div class="controls">
+                <button onclick="decrementTotal(100)">-100</button>
+                <button onclick="decrementTotal(10)">-10</button>
+                <button onclick="decrementTotal(1)">-1</button>
+                <span id="total">400</span>
+                <button onclick="incrementTotal(1)">+1</button>
+                <button onclick="incrementTotal(10)">+10</button>
+                <button onclick="incrementTotal(100)">+100</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <label>Rate (per hour):</label>
+            <div class="controls">
+                <button onclick="decrementRate(100)">-100</button>
+                <button onclick="decrementRate(10)">-10</button>
+                <button onclick="decrementRate(1)">-1</button>
+                <span id="rate">400</span>
+                <button onclick="incrementRate(1)">+1</button>
+                <button onclick="incrementRate(10)">+10</button>
+                <button onclick="incrementRate(100)">+100</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <label>Counter:</label>
+            <div class="controls">
+                <button onclick="decrementCounter(100)">-100</button>
+                <button onclick="decrementCounter(10)">-10</button>
+                <button onclick="decrementCounter(1)">-1</button>
+                <span id="counter">0</span>
+                <button onclick="incrementCounter(1)">+1</button>
+                <button onclick="incrementCounter(10)">+10</button>
+                <button onclick="incrementCounter(100)">+100</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="controls">
+                <button onclick="start()">Start</button>
+                <button onclick="pause()">Pause</button>
+                <button onclick="stop()">Stop</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <label>Time Left: <span id="timeLeft">--:--:--</span></label>
+        </div>
+
+        <div class="section">
+            <label>Completion Time: <span id="completionTime">--:-- --</span></label>
+        </div>
+
+        <div class="section">
+            <label>Pieces Remaining: <span id="piecesRemaining">0</span></label>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

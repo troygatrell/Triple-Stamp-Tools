@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: url('https://i.ibb.co/6FT3h67/dji-fly-20230809-162250-356-1691612582578-photo-optimized.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+    background-blend-mode: overlay;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.25); /* Slightly transparent background */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; /* Ensure vertical center alignment */
+}
+
+.section label {
+    font-weight: bold;
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.controls {
+    flex: 3; /* Adjusted to give more space for controls */
+    display: flex;
+    justify-content: center; /* Changed to center for even positioning */
+    align-items: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 0 5px; /* Adjusted margin for spacing */
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+}
+
+span {
+    font-size: 20px;
+    font-weight: bold; /* Emphasize the central values */
+    text-align: center; /* Center text alignment */
+    margin: 0 10px; /* Adding margins to ensure it stays centered */
+    flex-shrink: 0; /* Prevents the span from shrinking */
+    min-width: 60px; /* Set minimum width to accommodate up to four digits */
+}
+
+
+.title {
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px #000;
+}
