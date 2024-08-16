@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Production Time Calculator</title>
+    <title>Triple Stamp Tools</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-    <body>
+<body>
+    <header>
+        <h1>Triple Stamp Tools</h1>
+        <nav>
+            <ul>
+                <li><a href="#production-time-calculator">Production Time Calculator</a></li>
+                <!-- Future tools can be added here -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Production Time Calculator Section -->
+    <section id="production-time-calculator">
         <div class="container">
             <div class="title">Production Time Calculator</div>
-            
             <div class="section-group">
                 <div class="section">
                     <label for="total" class="value-label">Total</label>
@@ -23,7 +34,7 @@
                         <button onclick="decrementTotal(100)">-100</button>
                     </div>
                 </div>
-                
+
                 <div class="section">
                     <label for="rate" class="value-label">Rate</label>
                     <span id="rate" class="value-display">400</span>
@@ -36,7 +47,7 @@
                         <button onclick="decrementRate(100)">-100</button>
                     </div>
                 </div>
-                
+
                 <div class="section">
                     <label for="counter" class="value-label">Counter</label>
                     <span id="counter" class="value-display">0</span>
@@ -67,20 +78,27 @@
                 </div>
             </div>
 
+            <!-- Information Boxes -->
             <div class="information-group">
                 <div class="information-box">
                     <label>Time Left: <span id="timeLeft">--:--:--</span></label>
                 </div>
-            
                 <div class="information-box">
                     <label>Completion Time: <span id="completionTime">--:-- --</span></label>
                 </div>
-            
                 <div class="information-box">
                     <label>Pieces Remaining: <span id="piecesRemaining">0</span></label>
                 </div>
             </div>
-            
-        <script src="script.js"></script>
-    </body>
+        </div>
+        <!-- Back to Top Link -->
+        <div class="back-to-top">
+            <a href="#top">Back to Top</a>
+        </div>
+    </section>
+
+    <!-- Add sections for future tools here -->
+
+    <script src="production-time-calculator.js"></script>
+</body>
 </html>

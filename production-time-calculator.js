@@ -167,7 +167,7 @@ function stop() {
 }
 
 // Initial display update
-updateRateDisplay();
+
 updateCounterDisplay();
 updateTotalDisplay();
 updatePiecesRemaining();
