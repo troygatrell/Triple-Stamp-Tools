@@ -6,86 +6,80 @@
     <title>Production Time Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container">
-        <div class="title">Production Time Calculator</div>
-        
-        <div class="section-group">
-            <div class="section">
-                <label for="total" class="value-label">Total</label>
-                <span id="total" class="value-display">400</span>
-                <div class="controls">
-                    <button onclick="incrementTotal(1)">+1</button>
-                    <button onclick="decrementTotal(1)">-1</button>
-                    <button onclick="incrementTotal(10)">+10</button>
-                    <button onclick="decrementTotal(10)">-10</button>
-                    <button onclick="incrementTotal(100)">+100</button>
-                    <button onclick="decrementTotal(100)">-100</button>
-                </div>
-            </div>
+    <body>
+        <div class="container">
+            <div class="title">Production Time Calculator</div>
             
-            <div class="section">
-                <label for="rate" class="value-label">Rate</label>
-                <span id="rate" class="value-display">400</span>
-                <div class="controls">
-                    <button onclick="incrementRate(1)">+1</button>
-                    <button onclick="decrementRate(1)">-1</button>
-                    <button onclick="incrementRate(10)">+10</button>
-                    <button onclick="decrementRate(10)">-10</button>
-                    <button onclick="incrementRate(100)">+100</button>
-                    <button onclick="decrementRate(100)">-100</button>
+            <div class="section-group">
+                <div class="section">
+                    <label for="total" class="value-label">Total</label>
+                    <span id="total" class="value-display">400</span>
+                    <div class="controls">
+                        <button onclick="incrementTotal(1)">+1</button>
+                        <button onclick="decrementTotal(1)">-1</button>
+                        <button onclick="incrementTotal(10)">+10</button>
+                        <button onclick="decrementTotal(10)">-10</button>
+                        <button onclick="incrementTotal(100)">+100</button>
+                        <button onclick="decrementTotal(100)">-100</button>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <label for="rate" class="value-label">Rate</label>
+                    <span id="rate" class="value-display">400</span>
+                    <div class="controls">
+                        <button onclick="incrementRate(1)">+1</button>
+                        <button onclick="decrementRate(1)">-1</button>
+                        <button onclick="incrementRate(10)">+10</button>
+                        <button onclick="decrementRate(10)">-10</button>
+                        <button onclick="incrementRate(100)">+100</button>
+                        <button onclick="decrementRate(100)">-100</button>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <label for="counter" class="value-label">Counter</label>
+                    <span id="counter" class="value-display">0</span>
+                    <div class="controls">
+                        <button onclick="incrementCounter(1)">+1</button>
+                        <button onclick="decrementCounter(1)">-1</button>
+                        <button onclick="incrementCounter(10)">+10</button>
+                        <button onclick="decrementCounter(10)">-10</button>
+                        <button onclick="incrementCounter(100)">+100</button>
+                        <button onclick="decrementCounter(100)">-100</button>
+                    </div>
                 </div>
             </div>
-            
-            <div class="section">
-                <label for="counter" class="value-label">Counter</label>
-                <span id="counter" class="value-display">0</span>
-                <div class="controls">
-                    <button onclick="incrementCounter(1)">+1</button>
-                    <button onclick="decrementCounter(1)">-1</button>
-                    <button onclick="incrementCounter(10)">+10</button>
-                    <button onclick="decrementCounter(10)">-10</button>
-                    <button onclick="incrementCounter(100)">+100</button>
-                    <button onclick="decrementCounter(100)">-100</button>
+
+            <!-- Progress Bar -->
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar">
+                    <span id="progress-text" class="progress-text">0%</span>
                 </div>
             </div>
-        </div>
 
-        <!-- Additional Counter Display -->
-        <div class="section">
-            <label for="counter-display" class="value-label">Counter</label>
-            <span id="counter-display" class="value-display">0</span>
-        </div>
+            <!-- Start, Pause, Reset Controls -->
+            <div class="section">
+                <div class="controls">
+                    <button id="start-button" onclick="start()">Start</button>
+                    <button id="pause-button" onclick="pause()">Pause</button>
+                    <button id="reset-button" onclick="stop()">Reset</button>
+                </div>
+            </div>
 
-        <!-- Progress Bar -->
-        <div class="progress-bar-container">
-            <div id="progress-bar" class="progress-bar">
-                <span id="progress-text" class="progress-text">0%</span>
+            <div class="section">
+                <label>Time Left: <span id="timeLeft">--:--:--</span></label>
+            </div>
+
+            <div class="section">
+                <label>Completion Time: <span id="completionTime">--:-- --</span></label>
+            </div>
+
+            <div class="section">
+                <label>Pieces Remaining: <span id="piecesRemaining">0</span></label>
             </div>
         </div>
 
-        <!-- Start, Pause, Reset Controls -->
-        <div class="section">
-            <div class="controls">
-                <button id="start-button" onclick="start()">Start</button>
-                <button id="pause-button" onclick="pause()">Pause</button>
-                <button id="reset-button" onclick="stop()">Reset</button>
-            </div>
-        </div>
-
-        <div class="section">
-            <label>Time Left: <span id="timeLeft">--:--:--</span></label>
-        </div>
-
-        <div class="section">
-            <label>Completion Time: <span id="completionTime">--:-- --</span></label>
-        </div>
-
-        <div class="section">
-            <label>Pieces Remaining: <span id="piecesRemaining">0</span></label>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>

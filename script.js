@@ -11,6 +11,11 @@ function updateRateDisplay() {
 // Function to update the counter display
 function updateCounterDisplay() {
     document.getElementById('counter').textContent = Math.floor(counter); // Display whole number
+    
+    // Update progress bar
+    const progressPercentage = (counter / total) * 100;
+    document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
+    document.getElementById('progress-text').textContent = `${Math.floor(progressPercentage)}%`;
 }
 
 // Function to update the total display
@@ -119,8 +124,9 @@ function start() {
             updateTimeCalculations();
         }, 1000); // Updates every second
     }
+    document.getElementById('start-button').classList.add('active');
+    document.getElementById('pause-button').classList.remove('paused');
 }
-
 
 // Function to pause the counter
 function pause() {
@@ -128,6 +134,8 @@ function pause() {
         clearInterval(intervalId);
         intervalId = null;
     }
+    document.getElementById('start-button').classList.remove('active');
+    document.getElementById('pause-button').classList.add('paused');
 }
 
 // Function to stop the counter and reset everything
@@ -141,6 +149,8 @@ function stop() {
     updateTotalDisplay();
     updatePiecesRemaining();
     updateTimeCalculations();
+    document.getElementById('start-button').classList.remove('active');
+    document.getElementById('pause-button').classList.remove('paused');
 }
 
 // Initial display update
@@ -149,54 +159,3 @@ updateCounterDisplay();
 updateTotalDisplay();
 updatePiecesRemaining();
 updateTimeCalculations();
-
-function updateCounterDisplay() {
-    document.getElementById('counter').textContent = Math.floor(counter); // Display whole number
-    document.getElementById('counter-display').textContent = Math.floor(counter); // Update the additional counter display
-    
-    // Update progress bar
-    const progressPercentage = (counter / total) * 100;
-    document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
-    document.getElementById('progress-text').textContent = `${Math.floor(progressPercentage)}%`;
-}
-
-function start() {
-    if (intervalId === null) { // Prevent multiple intervals
-        intervalId = setInterval(() => {
-            const increment = rate / 3600; // Correct increment for per second calculation based on per hour rate
-            counter += increment;
-            if (Math.floor(counter) >= total) {
-                counter = total;
-                pause(); // Stop when total is reached
-            }
-            updateCounterDisplay();
-            updatePiecesRemaining();
-            updateTimeCalculations();
-        }, 1000); // Updates every second
-    }
-    document.getElementById('start-button').classList.add('active');
-    document.getElementById('pause-button').classList.remove('paused');
-}
-
-function pause() {
-    if (intervalId !== null) {
-        clearInterval(intervalId);
-        intervalId = null;
-    }
-    document.getElementById('start-button').classList.remove('active');
-    document.getElementById('pause-button').classList.add('paused');
-}
-
-function stop() {
-    pause(); // Stop the interval
-    counter = 0; // Reset counter to 0
-    rate = 400; // Reset rate to initial value
-    total = 400; // Reset total to initial value
-    updateRateDisplay();
-    updateCounterDisplay();
-    updateTotalDisplay();
-    updatePiecesRemaining();
-    updateTimeCalculations();
-    document.getElementById('start-button').classList.remove('active');
-    document.getElementById('pause-button').classList.remove('paused');
-}
