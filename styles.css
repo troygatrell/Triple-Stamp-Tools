@@ -2,11 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background: url('https://i.ibb.co/1059kk1/dji-fly-20230809-161330-352-1691612392443-photo-optimized.jpg') no-repeat center center fixed;
+    background: url('https://i.ibb.co/MZZQHr8/DJI-0199.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
     text-shadow: 1px 1px 0 #000;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(119, 174, 154, 0.1);
     background-blend-mode: overlay;
 }
 
@@ -16,17 +16,17 @@ body {
     max-width: 1000px;
     margin: auto;
     padding: 20px;
-    background: rgba(119, 174, 154, 0.4);
+    background: hsla(158deg, 25%, 25%, .95);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-    font-size: 40px;
+    font-size: 36px;
     text-align: center;
-    color: #fff;
+    color: rgb(255, 255, 255);
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px #000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .section-group {
@@ -42,11 +42,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 280px; /* Ensure sections don't shrink too small */
+    min-width: 200px; /* Ensure sections don't shrink too small */
 }
 
 .value-label {
@@ -75,7 +75,7 @@ body {
     margin: 5px;
     border: none;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     cursor: pointer;
     font-size: 16px;
