@@ -109,7 +109,25 @@ function decrementCounter(amount) {
     }
 }
 
-// Function to start the counter
+function setButtonState(startActive, pauseActive) {
+    const startButton = document.getElementById('start-button');
+    const pauseButton = document.getElementById('pause-button');
+
+    // Set start button state
+    if (startActive) {
+        startButton.classList.add('active');
+    } else {
+        startButton.classList.remove('active');
+    }
+
+    // Set pause button state
+    if (pauseActive) {
+        pauseButton.classList.add('paused');
+    } else {
+        pauseButton.classList.remove('paused');
+    }
+}
+
 function start() {
     if (intervalId === null) { // Prevent multiple intervals
         intervalId = setInterval(() => {
@@ -124,21 +142,17 @@ function start() {
             updateTimeCalculations();
         }, 1000); // Updates every second
     }
-    document.getElementById('start-button').classList.add('active');
-    document.getElementById('pause-button').classList.remove('paused');
+    setButtonState(true, false); // Set start as active, pause as inactive
 }
 
-// Function to pause the counter
 function pause() {
     if (intervalId !== null) {
         clearInterval(intervalId);
         intervalId = null;
     }
-    document.getElementById('start-button').classList.remove('active');
-    document.getElementById('pause-button').classList.add('paused');
+    setButtonState(false, true); // Set pause as active, start as inactive
 }
 
-// Function to stop the counter and reset everything
 function stop() {
     pause(); // Stop the interval
     counter = 0; // Reset counter to 0
@@ -149,8 +163,7 @@ function stop() {
     updateTotalDisplay();
     updatePiecesRemaining();
     updateTimeCalculations();
-    document.getElementById('start-button').classList.remove('active');
-    document.getElementById('pause-button').classList.remove('paused');
+    setButtonState(false, false); // Reset both start and pause buttons
 }
 
 // Initial display update

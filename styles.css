@@ -4,9 +4,9 @@ body {
     padding: 20px;
     background: url('https://i.ibb.co/MZZQHr8/DJI-0199.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
+    color: hsl(158deg, 40%, 90%);
     text-shadow: 1px 1px 0 #000;
-    background-color: rgba(119, 174, 154, 0.1);
+    background-color: hsla(158deg, 10%, 40%, 1);
     background-blend-mode: overlay;
 }
 
@@ -16,17 +16,18 @@ body {
     max-width: 1000px;
     margin: auto;
     padding: 20px;
-    background: hsla(158deg, 25%, 25%, .95);
+    background: hsla(158deg, 25%, 30%, 0.5);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
 }
 
 .title {
     font-size: 36px;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: hsl(158deg, 40%, 90%);
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
 }
 
 .section-group {
@@ -42,7 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -52,14 +53,14 @@ body {
 .value-label {
     font-size: 18px;
     margin-bottom: 5px;
-    color: #fff;
+    color: hsl(158deg, 40%, 90%);
 }
 
 .value-display {
     font-size: 70px;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #fff;
+    color: hsl(158deg, 40%, 90%);
 }
 
 .controls {
@@ -83,10 +84,31 @@ body {
     text-align: center;
 }
 
+/* Remove hover effect when buttons are active or paused */
 .controls button:hover {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
+button.active {
+    background-color: hsl(158deg, 50%, 30%);
+}
+
+button.paused {
+    background-color: hsl(380deg, 50%, 40%);
+}
+
+button.active:hover,
+button.paused:hover {
+    background-color: hsl(158deg, 50%, 30%); /* Keep active color */
+    cursor: default;
+}
+
+button.paused:hover {
+    background-color: hsl(380deg, 50%, 40%); /* Keep paused color */
+    cursor: default;
+}
+
+/* Progress Bar */
 .progress-bar-container {
     width: 100%;
     height: 20px;
@@ -99,13 +121,12 @@ body {
 
 .progress-bar {
     height: 100%;
-    background-color: #007BFF;
+    background-color: hsl(380deg, 50%, 40%);
     width: 0;
     border-radius: 5px;
     transition: width 0.5s ease-in-out;
     position: relative;
 }
-
 .progress-text {
     position: absolute;
     left: 50%;
@@ -115,12 +136,34 @@ body {
     font-weight: bold;
 }
 
-button.active {
-    background-color: #28a745;
+/* New styles for the information boxes */
+.information-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    margin-top: 20px;
 }
 
-button.paused {
-    background-color: #ffc107;
+.information-box {
+    flex: 1;
+    margin: 10px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Adjusting the layout for smaller screens */
+@media (max-width: 480px) {
+    .information-group {
+        flex-direction: column;
+    }
+
+    .information-box {
+        margin: 10px 0;
+    }
 }
 
 /* Media Query for Smaller Screens */
