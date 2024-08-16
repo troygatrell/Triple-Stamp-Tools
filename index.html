@@ -6,16 +6,37 @@
     <title>Triple Stamp Tools</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
     <header>
         <h1>Triple Stamp Tools</h1>
         <nav>
             <ul>
+                <li><a href="#inventory-search">Sample Inventory Search</a></li>
                 <li><a href="#production-time-calculator">Production Time Calculator</a></li>
                 <!-- Future tools can be added here -->
             </ul>
         </nav>
     </header>
+
+    <!-- Inventory Search Tool Section -->
+    <section id="inventory-search">
+        <div class="container">
+            <div class="title">Sample Inventory Search</div>
+            
+            <!-- Search Input -->
+            <input type="text" id="search-input" class="search-input" placeholder="Enter search term...">
+
+            <!-- Results Area -->
+            <div id="search-results" class="results-section">
+                <!-- Dynamic search results will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Back to Top Link -->
+        <div class="back-to-top">
+            <a href="#top">Back to Top</a>
+        </div>
+    </section>
 
     <!-- Production Time Calculator Section -->
     <section id="production-time-calculator">
@@ -97,8 +118,10 @@
         </div>
     </section>
 
+
     <!-- Add sections for future tools here -->
 
     <script src="production-time-calculator.js"></script>
+    <script src="inventory-search.js"></script>
 </body>
 </html>
